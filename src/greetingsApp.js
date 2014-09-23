@@ -2,19 +2,6 @@
 
 /* global angular */
 
-/*  Pro-tip: Although it is generally suggested against, when doing Angular development,
-    you should declare all of your AngularJS scripts to "use strict", a new feature in ECMAScript 5.
-    This will catch common errors in JavaScript and works nicely with useful code quality tools like
-    JSLint/JSHint.
- */
-
-/*  Pro-tip: Since the angular.module() method returns a reference to the module created, it's
-    usually a good idea to assign that return value to a variable. You may then define any
-    controllers, services, directives, filters, etc. simply by referencing that variable.
-
-    NOTE: the angular.module() method is used to both *register* a new module and *reference*
-    a previously-registered module. This can be confusing for people new to Angular.
- */
 var greetingsApp = angular.module('greetingsApp', []);
 
 greetingsApp.controller('GreetingsCtrl', ['$scope',
@@ -87,11 +74,6 @@ greetingsApp.controller('GreetingsCtrl', ['$scope',
             }
         }
 
-        /* Pro-tip: Rather than reaching out and getting/setting properties on the scope,
-            write methods that pass in and/or return values affecting the state of the scope.
-            Especially for larger applications, this will make your code more maintainable,
-            testable, and reusable, and will generally help with the readability of your code.
-         */
         function updateSort(columnName, greetModel) {
             if (isSortedBy(columnName, greetModel.sortColumn)) {
                 greetModel.isReversed = !greetModel.isReversed;
@@ -116,11 +98,19 @@ greetingsApp.controller('GreetingsCtrl', ['$scope',
             updateSort(columnName, $scope.greetModel);
         }
 
-        /* Pro-tip: Use named functions that are then assigned to the scope object in Angular Controllers.
-            This allows for a clean distinction between publicly-accessible methods (and properties) vs.
-            private methods on the Controller.
-         */
+        function removeGreeting(greeting, greetModel) {
+            var index = greetModel.greetings.indexOf(greeting);
+            greetModel.greetings.splice(index, 1);
+        }
+
+        function addGreeting(greeting, greetModel) {
+            greetModel.greetings.push(greeting);
+            greetModel.addGreet = {};
+        }
+
         $scope.sortBy = sortBy;
         $scope.getSortClass = getSortClass;
+        $scope.removeGreeting = removeGreeting;
+        $scope.addGreeting = addGreeting;
     }
 ]);

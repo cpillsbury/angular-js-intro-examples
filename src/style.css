@@ -1,4 +1,5 @@
 /* Styles go here */
+
 body{
     padding: 10px;
 }
@@ -24,4 +25,14 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.add-input{
+    height: 25px;
+}
+
+.table-btn{
+    height: 26px;
+    width: 30px;
+    padding-top: 3px;
 }

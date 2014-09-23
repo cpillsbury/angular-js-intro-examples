@@ -4,6 +4,7 @@
     <list default="true" id="da2342b5-8b89-49a2-83dc-cbb9dbf3f947" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/greetingsApp.js" afterPath="$PROJECT_DIR$/src/greetingsApp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
     </list>
     <ignored path="angular-js-intro-examples.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,19 +27,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="46" selection-start="4621" selection-end="4621" vertical-scroll-proportion="-1.8205128" vertical-offset="1103" max-vertical-offset="1500">
-              <folding />
+            <state line="12" column="90" selection-start="515" selection-end="574" vertical-scroll-proportion="0.4534005" vertical-offset="0" max-vertical-offset="1305">
+              <folding>
+                <element signature="n#style#0;n#button#0;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#td#4;n#tr#0;n#tfoot#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="greetingsApp.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="greetingsApp.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/greetingsApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="0" selection-start="3979" selection-end="3979" vertical-scroll-proportion="2.581967" vertical-offset="435" max-vertical-offset="1965">
+            <state line="17" column="31" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1815">
               <folding />
             </state>
           </provider>
@@ -47,7 +51,7 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="20" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+            <state line="38" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -67,8 +71,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/style.css" />
-        <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/greetingsApp.js" />
+        <option value="$PROJECT_DIR$/src/index.html" />
       </list>
     </option>
   </component>
@@ -248,22 +252,25 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="20" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="488">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="46" selection-start="4621" selection-end="4621" vertical-scroll-proportion="-1.8205128" vertical-offset="1103" max-vertical-offset="1500">
+        <state line="38" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="660">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/greetingsApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="0" selection-start="3979" selection-end="3979" vertical-scroll-proportion="2.581967" vertical-offset="435" max-vertical-offset="1965">
+        <state line="17" column="31" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0" vertical-offset="1327" max-vertical-offset="1815">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="90" selection-start="515" selection-end="574" vertical-scroll-proportion="0.4534005" vertical-offset="0" max-vertical-offset="1305">
+          <folding>
+            <element signature="n#style#0;n#button#0;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#td#4;n#tr#0;n#tfoot#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -2,67 +2,25 @@
 <html>
 
 <head>
-    <title>4</title>
+    <title>5</title>
     <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- Pro-tip: Remember that the name used in the ng-app directive must match the name of the module
-    *registered* to Angular using angular.module(). This will be a string and will be the first
-    parameter passed into angular.module(). See the JavaScript source file for more.
--->
 <body ng-app="greetingsApp" ng-init="stylesModel.sortClasses = {unsorted: 'fa-sort', ascending: 'fa-sort-asc', descending: 'fa-sort-desc'}">
-<!-- ng-controller:
 
-    From the AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngController):
-
-    "The ngController directive attaches a controller class to the view. This is a key aspect of how
-    angular supports the principles behind the Model-View-Controller design pattern.
-
-    MVC components in angular:
-
-        Model — Models are the properties of a scope; scopes are attached to the DOM where scope properties
-        are accessed through bindings.
-        View — The template (HTML with data bindings) that is rendered into the View.
-        Controller — The ngController directive specifies a Controller class; the class contains business
-        logic behind the application to decorate the scope with functions and values"
-
--->
 <div ng-controller="GreetingsCtrl" class="main-panel panel panel-primary">
-    <div class="panel-heading">Lesson 4 - MVC Composition, Controllers & ng-controller, ng-class</div>
+    <div class="panel-heading">Lesson 5 - MVC Composition, Controllers & Model interaction</div>
     <div class="panel-body">
         <div class="input-div">
             Search:
             <input type="text" class="form-control search-input" ng-model="greetModel.search" />
         </div>
         <table border="1" class="table table-striped table-bordered">
+            <tbody>
             <tr class="no-select">
                 <th ng-click="sortBy('hello')">
                     Say hello
-                    <!-- ng-class:
-
-                        From the AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngClass):
-
-                        "The ngClass directive allows you to dynamically set CSS classes on an HTML element
-                        by databinding an expression that represents all classes to be added.
-
-                        The directive operates in three different ways, depending on which of three types
-                        the expression evaluates to:
-
-                            1. If the expression evaluates to a string, the string should be one or more
-                            space-delimited class names.
-                            2. If the expression evaluates to an array, each element of the array should be
-                            a string that is one or more space-delimited class names.
-                            3. If the expression evaluates to an object, then for each key-value pair of the
-                            object with a truthy value the corresponding key is used as a class name.
-
-                    -->
-                    <!-- Pro-tip: Rather than making one method per use-case, write generic methods and pass
-                        properties in. This allows 1) Your HTML to still be *declaratively* descriptive
-                        (i.e. "self-documenting code") while 2) Allowing your JavaScript to not just contain
-                        the *imperative* parts of your code, but also allows it to be far more reusable.
-                        (And testable!)
-                    -->
                     <i class="fa" ng-class="getSortClass('hello', stylesModel.sortClasses)"></i>
                 </th>
                 <th ng-click="sortBy('world')">
@@ -77,13 +35,42 @@
                     Visited?
                     <i class="fa" ng-class="getSortClass('visitDate', stylesModel.sortClasses)"></i>
                 </th>
+                <th>
+                    Add/Rem
+                </th>
             </tr>
             <tr ng-repeat="greeting in greetModel.greetings | orderBy:greetModel.sortColumn:greetModel.isReversed | filter:greetModel.search">
                 <td>{{ greeting.hello }}</td>
                 <td>{{ greeting.world }}</td>
                 <td>{{ greeting.language }}</td>
                 <td>{{ greeting.visitDate | date:'MMM d, y' }}</td>
+                <td>
+                    <button style="width:100%" class="btn btn-danger table-btn" ng-click="removeGreeting(greeting, greetModel)">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </td>
             </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td>
+                    <input type="text" class="form-control add-input" ng-model="greetModel.addGreet.hello" />
+                </td>
+                <td>
+                    <input type="text" class="form-control add-input" ng-model="greetModel.addGreet.world" />
+                </td>
+                <td>
+                    <input type="text" class="form-control add-input" ng-model="greetModel.addGreet.language" />
+                </td>
+                <td>
+                    <input type="text" class="form-control add-input" ng-model="greetModel.addGreet.visitDate" />
+                </td>
+                <td>
+                    <button style="width:100%" class="btn btn-success table-btn" ng-click="addGreeting(greetModel.addGreet, greetModel)"><i class="fa fa-plus"></i>
+                    </button>
+                </td>
+            </tr>
+            </tfoot>
         </table>
     </div>
 </div>
