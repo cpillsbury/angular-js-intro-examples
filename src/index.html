@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>1</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- ng-app:
+
+    From AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngApp):
+
+    "Use this directive to auto-bootstrap an AngularJS
+    application. The ngApp directive designates the root
+    element of the application and is typically placed
+    near the root element of the page - e.g. on the <body>
+    or <html> tags."
+
+-->
+<!-- Pro-tip: Place your ng-app directive on 1) the lowest HTML element in the DOM
+    that 2) still contains all of your other AngularJS code (e.g. on the <body> element
+    instead of <html> or <input>, respectively).
+    AngularJS treats the element with "ng-app" as a root element and looks for things
+    like directives and data bindings on the root and *all* of its descendants, so
+    placing it as low as possible provides at least a slight performance benefit.
+-->
+<body ng-app="" ng-init="data = {hello: 'Hello', toSomething: 'World'}">
+<div class="main-panel panel panel-primary">
+    <div class="panel-heading">Lesson 1 - Basic Data Binding, ng-app, ng-model, ng-init</div>
+    <div class="panel-body">
+
+        <!-- ng-model:
+
+            From the AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngModel):
+
+            "The ngModel directive binds an input,select, textarea
+            (or custom form control) to a property on the scope
+            using NgModelController, which is created and exposed
+            by this directive."
+
+        -->
+        <!-- Pro-tip: Always bind to a property on an Object model (e.g. "data.hello")
+            instead of directly to a property (e.g. simply "hello"), since the latter
+            can cause problems with nested data bindings. This has to do with the way
+            Angular Scope Inheritance works and is related to prototypal inheritance
+            property shadowing.
+        -->
+
+        <input type="text" class="form-control input-control" ng-model="data.hello" placeholder="Say Hello" />
+        <input type="text" class="form-control input-control" ng-model="data.toSomething" placeholder="to something" />
+        <br/>
+
+        <!-- Data-binding via double curly-braces ("{{" and "}}"):
+
+            AngularJS evaluates whatever is found between curly-braces as (approximately)
+            JavaScript and automatically picks up on changes to things like properties to
+            allow for two-way data binding in HTML. For example, Angular will replace
+            "{{ data.hello }}" with the value of the "data.hello" property in the HTML and will
+            automatically update the HTML whenever that value changes.
+
+         -->
+
+        <div class="results">Results: {{ data.hello + ' ' + data.toSomething }}</div>
+    </div>
+</div>
+
+<!-- Pro-tip: Where you place your script tags (e.g. in the <head> tag or at the bottom
+    of the <body> tag) can impact 1) how long it takes your page to load and render and
+    2) how long it takes before your scripts begin to execute. Similarly, using the
+    "async" and "defer" script attributes may or may not be appropriate, depending on
+    what browsers you wish to support.
+-->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+</body>
+
+</html>
