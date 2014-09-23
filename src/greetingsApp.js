@@ -24,14 +24,12 @@ greetingsApp.controller('GreetingsCtrl', ['$scope',
             hello: 'Hello',
             world: 'world',
             language: 'English',
-            visitStartDate: new Date(2010,10,28),
-            visitEndDate: new Date(2010,11,13)
+            visitDate: new Date(2010,10,28)
         }, {
             hello: 'Guten Tag',
             world: 'Welt',
             language: 'German',
-            visitStartDate: new Date(1999, 12, 31),
-            visitEndDate: new Date(2001, 10, 30)
+            visitDate: new Date(1999, 12, 31)
         }, {
             hello: 'Hola',
             world: 'mundo',
@@ -40,32 +38,27 @@ greetingsApp.controller('GreetingsCtrl', ['$scope',
             hello: 'Bonjour',
             world: 'monde',
             language: 'French',
-            visitStartDate: new Date(2013, 8, 15),
-            visitEndDate: new Date(2013, 8, 15)
+            visitDate: new Date(2013, 8, 15)
         }, {
             hello: 'Ciao',
             world: 'mondo',
             language: 'Italian',
-            visitStartDate: new Date(1993, 1, 29),
-            visitEndDate: new Date(1994, 10, 10)
+            visitDate: new Date(1993, 1, 29)
         }, {
             hello: 'Konnichiwa',
             world: 'sekai',
             language: 'Japanese',
-            visitStartDate: new Date(2000, 1, 1),
-            visitEndDate: new Date(2000, 1, 31)
+            visitDate: new Date(2000, 1, 1)
         }, {
             hello: 'Selam',
             world: 'dünya',
             language: 'Turkish',
-            visitStartDate: new Date(2013, 8, 15),
-            visitEndDate: new Date(2013, 11, 13)
+            visitDate: new Date(2013, 8, 15)
         }, {
             hello: 'Namaste',
             world: 'duniyā',
             language: 'Hindi',
-            visitStartDate: new Date(2014, 6, 17),
-            visitEndDate: new Date(2014, 7, 13)
+            visitDate: new Date(2014, 6, 17)
         }, {
             hello: 'NuqneH',
             world: '\'u\'',

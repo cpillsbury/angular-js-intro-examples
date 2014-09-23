@@ -73,16 +73,16 @@
                     in a language
                     <i class="fa" ng-class="getSortClass('language', stylesModel.sortClasses)"></i>
                 </th>
-                <th ng-click="sortBy('visitEndDate')">
+                <th ng-click="sortBy('visitDate')">
                     Visited?
-                    <i class="fa" ng-class="getSortClass('visitEndDate', stylesModel.sortClasses)"></i>
+                    <i class="fa" ng-class="getSortClass('visitDate', stylesModel.sortClasses)"></i>
                 </th>
             </tr>
             <tr ng-repeat="greeting in greetModel.greetings | orderBy:greetModel.sortColumn:greetModel.isReversed | filter:greetModel.search">
                 <td>{{ greeting.hello }}</td>
                 <td>{{ greeting.world }}</td>
                 <td>{{ greeting.language }}</td>
-                <td>{{ greeting.visitStartDate | date:'MMM d, y' }}</td>
+                <td>{{ greeting.visitDate | date:'MMM d, y' }}</td>
             </tr>
         </table>
     </div>
