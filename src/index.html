@@ -2,89 +2,74 @@
 <html>
 
 <head>
-    <title>1</title>
+    <title>2</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- ng-app:
+<body ng-app=""
+      ng-init="
+    data.greetings = [
+            {hello: 'Hello', world: 'world', language: 'English'},
+            {hello: 'Guten Tag', world: 'Welt', language: 'German'},
+            {hello: 'Hola', world: 'mundo', language: 'Spanish'},
+            {hello: 'Bonjour', world: 'monde', language: 'French'},
+            {hello: 'Ciao', world: 'mondo', language: 'Italian'},
+            {hello: 'Konnichiwa', world: 'sekai', language: 'Japanese'},
+            {hello: 'Selam', world: 'dünya', language: 'Turkish'},
+            {hello: 'Namaste', world: 'duniyā', language: 'Hindi'},
+            {hello: 'NuqneH', world: '\'u\'', language: 'Klingon'}
+          ]"
+        >
 
-    From AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngApp):
-
-    "Use this directive to auto-bootstrap an AngularJS
-    application. The ngApp directive designates the root
-    element of the application and is typically placed
-    near the root element of the page - e.g. on the <body>
-    or <html> tags."
-
--->
-<!-- Pro-tip: Place your ng-app directive on 1) the lowest HTML element in the DOM
-    that 2) still contains all of your other AngularJS code (e.g. on the <body> element
-    instead of <html> or <input>, respectively).
-    AngularJS treats the element with "ng-app" as a root element and looks for things
-    like directives and data bindings on the root and *all* of its descendants, so
-    placing it as low as possible provides at least a slight performance benefit.
--->
-<!-- ng-init:
-
-    From AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngInit):
-
-    "The ngInit directive allows you to evaluate an expression in the current scope.
-    The only appropriate use of ngInit is for aliasing special properties of ngRepeat, as
-    seen in the demo below. Besides this case, you should use controllers rather than ngInit
-    to initialize values on a scope."
-
--->
-<!-- Pro-tip: As the quote above suggests, you should almost never use ng-init. Instead,
-    you should use JavaScript defined AngularJS controllers to initialize properties.-->
-<body ng-app="" ng-init="data = {hello: 'Hello', toSomething: 'World'}">
 <div class="main-panel panel panel-primary">
-    <div class="panel-heading">Lesson 1 - Basic Data Binding, ng-app, ng-model, ng-init</div>
+    <div class="panel-heading">Lesson 2 - Data Binding to Complex Objects continued, ng-repeat</div>
     <div class="panel-body">
+        <table border="1" class="table table-striped table-bordered">
+            <tr>
+                <th>Say hello</th>
+                <th>to the world</th>
+                <th>in a language</th>
+            </tr>
 
-        <!-- ng-model:
+            <!-- ng-repeat:
 
-            From the AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngModel):
+                From the AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngRepeat):
 
-            "The ngModel directive binds an input,select, textarea
-            (or custom form control) to a property on the scope
-            using NgModelController, which is created and exposed
-            by this directive."
+                "The ngRepeat directive instantiates a template once per item from a collection.
+                Each template instance gets its own scope, where the given loop variable is set
+                to the current collection item, and $index is set to the item index or key."
 
-        -->
-        <!-- Pro-tip: Always bind to a property on an Object model (e.g. "data.hello")
-            instead of directly to a property (e.g. simply "hello"), since the latter
-            can cause problems with nested data bindings. This has to do with the way
-            Angular Scope Inheritance works and is related to prototypal inheritance
-            property shadowing.
-        -->
+            -->
 
-        <input type="text" class="form-control input-control" ng-model="data.hello" placeholder="Say Hello" />
-        <input type="text" class="form-control input-control" ng-model="data.toSomething" placeholder="to something" />
-        <br/>
+            <!-- Pro-tip: For larger and/or more complex data-sources, ng-repeat will start
+                to have a visible impact on performance. For most browsers, you can expect this
+                to happen at around 2000/2500 distinct bindings (For example: If we have a list
+                of complex items "data.greetings" that we want to use in ng-repeat and are binding
+                to three items "greeting.hello," "greeting.world," and "greeting.language" for each
+                item in the list, this means we will likely start noticing a performance hit at
+                around 750 items (~= 2250/3).
 
-        <!-- Data-binding via double curly-braces ("{{" and "}}"):
+                This means, if your Angular SPA starts to run slowly and you use ng-repeat (and
+                derivative directives) with large/complex datasets in your app, 1) these are a
+                likely culprit and b) you should consider re-designing/re-architecting the use
+                case.
 
-            AngularJS evaluates whatever is found between curly-braces as (approximately)
-            JavaScript and automatically picks up on changes to things like properties to
-            allow for two-way data binding in HTML. For example, Angular will replace
-            "{{ data.hello }}" with the value of the "data.hello" property in the HTML and will
-            automatically update the HTML whenever that value changes.
+                For more on the issue, see:
+                http://stackoverflow.com/questions/9682092/databinding-in-angularjs/9693933#9693933
+            -->
 
-         -->
-
-        <div class="results">Results: {{ data.hello + ' ' + data.toSomething }}</div>
+            <tr ng-repeat="greeting in data.greetings">
+                <td>{{ greeting.hello }}</td>
+                <td>{{ greeting.world }}</td>
+                <td>{{ greeting.language }}</td>
+            </tr>
+        </table>
     </div>
 </div>
-
-<!-- Pro-tip: Where you place your script tags (e.g. in the <head> tag or at the bottom
-    of the <body> tag) can impact 1) how long it takes your page to load and render and
-    2) how long it takes before your scripts begin to execute. Similarly, using the
-    "async" and "defer" script attributes may or may not be appropriate, depending on
-    which browsers you wish to support.
--->
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js">
+</script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </body>
 
 </html>
