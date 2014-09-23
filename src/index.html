@@ -25,6 +25,18 @@
     like directives and data bindings on the root and *all* of its descendants, so
     placing it as low as possible provides at least a slight performance benefit.
 -->
+<!-- ng-init:
+
+    From AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngInit):
+
+    "The ngInit directive allows you to evaluate an expression in the current scope.
+    The only appropriate use of ngInit is for aliasing special properties of ngRepeat, as
+    seen in the demo below. Besides this case, you should use controllers rather than ngInit
+    to initialize values on a scope."
+
+-->
+<!-- Pro-tip: As the quote above suggests, you should almost never use ng-init. Instead,
+    you should use JavaScript defined AngularJS controllers to initialize properties.-->
 <body ng-app="" ng-init="data = {hello: 'Hello', toSomething: 'World'}">
 <div class="main-panel panel panel-primary">
     <div class="panel-heading">Lesson 1 - Basic Data Binding, ng-app, ng-model, ng-init</div>
@@ -69,7 +81,7 @@
     of the <body> tag) can impact 1) how long it takes your page to load and render and
     2) how long it takes before your scripts begin to execute. Similarly, using the
     "async" and "defer" script attributes may or may not be appropriate, depending on
-    what browsers you wish to support.
+    which browsers you wish to support.
 -->
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
