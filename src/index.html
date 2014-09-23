@@ -2,74 +2,108 @@
 <html>
 
 <head>
-    <title>2</title>
+    <title>3</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body ng-app=""
-      ng-init="
+<body ng-app="" ng-init="
     data.greetings = [
-            {hello: 'Hello', world: 'world', language: 'English'},
-            {hello: 'Guten Tag', world: 'Welt', language: 'German'},
+            {hello: 'Hello', world: 'world', language: 'English', visitDate: '2010-10-28'},
+            {hello: 'Guten Tag', world: 'Welt', language: 'German', visitDate: '1999-12-31'},
             {hello: 'Hola', world: 'mundo', language: 'Spanish'},
-            {hello: 'Bonjour', world: 'monde', language: 'French'},
-            {hello: 'Ciao', world: 'mondo', language: 'Italian'},
-            {hello: 'Konnichiwa', world: 'sekai', language: 'Japanese'},
-            {hello: 'Selam', world: 'dünya', language: 'Turkish'},
-            {hello: 'Namaste', world: 'duniyā', language: 'Hindi'},
+            {hello: 'Bonjour', world: 'monde', language: 'French', visitDate: '2013-08-15T05:14:23'},
+            {hello: 'Ciao', world: 'mondo', language: 'Italian', visitDate: '1993-01-29'},
+            {hello: 'Konnichiwa', world: 'sekai', language: 'Japanese', visitDate: '2000-01-01'},
+            {hello: 'Selam', world: 'dünya', language: 'Turkish', visitDate: '2013-08-15T12:14:23'},
+            {hello: 'Namaste', world: 'duniyā', language: 'Hindi', visitDate: '2014-06-17T12:23:07'},
             {hello: 'NuqneH', world: '\'u\'', language: 'Klingon'}
-          ]"
-        >
+          ]">
 
 <div class="main-panel panel panel-primary">
-    <div class="panel-heading">Lesson 2 - Data Binding to Complex Objects continued, ng-repeat</div>
+    <div class="panel-heading">Lesson 3 - Built-in filters (orderBy, reverse, filter), ng-click</div>
     <div class="panel-body">
+        <div class="input-div">
+            Search:  <input type="text" class="form-control search-input" ng-model="data.search" />
+        </div>
         <table border="1" class="table table-striped table-bordered">
             <tr>
-                <th>Say hello</th>
-                <th>to the world</th>
-                <th>in a language</th>
+                <!-- ng-click:
+
+                From the AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngClick):
+
+                "The ngClick directive allows you to specify custom behavior when an element is clicked."
+
+                -->
+                <!-- Pro-tip: Although AngularJS allows you to write JavaScript-like code inline in HTML in directives,
+                    you should avoid writing too much code in these directives. Although "too much code" will vary
+                    from case to case, here's one good rule of thumb: if you need to use a semi-colon, it's too much.
+
+                    Instead, you should write a custom method and add it to an AngularJS controller (as you'll see, later)
+                    that does the work you *would have* written inline. This allows you to keep your HTML/templates
+                    *declaritive* and your JavaScript *imperative*.
+                -->
+                <th ng-click="data.sortColumn = 'hello';data.isReversed = !data.isReversed">Say hello</th>
+                <th ng-click="data.sortColumn = 'world';data.isReversed = !data.isReversed">to the world</th>
+                <th ng-click="data.sortColumn = 'language';data.isReversed = !data.isReversed">in a language</th>
+                <th ng-click="data.sortColumn = 'visitDate';data.isReversed = !data.isReversed">Visited?</th>
             </tr>
+            <!-- AngularJS Filters:
 
-            <!-- ng-repeat:
+                From the AngularJS docs (https://docs.angularjs.org/guide/filter):
 
-                From the AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngRepeat):
-
-                "The ngRepeat directive instantiates a template once per item from a collection.
-                Each template instance gets its own scope, where the given loop variable is set
-                to the current collection item, and $index is set to the item index or key."
+                "A filter formats the value of an expression for display to the user. They can be used in view templates,
+                controllers or services and it is easy to define your own filter."
 
             -->
+            <!-- AngularJS built-in filters - filter:
 
-            <!-- Pro-tip: For larger and/or more complex data-sources, ng-repeat will start
-                to have a visible impact on performance. For most browsers, you can expect this
-                to happen at around 2000/2500 distinct bindings (For example: If we have a list
-                of complex items "data.greetings" that we want to use in ng-repeat and are binding
-                to three items "greeting.hello," "greeting.world," and "greeting.language" for each
-                item in the list, this means we will likely start noticing a performance hit at
-                around 750 items (~= 2250/3).
+                From the AngularJS docs (https://docs.angularjs.org/api/ng/filter/filter):
 
-                This means, if your Angular SPA starts to run slowly and you use ng-repeat (and
-                derivative directives) with large/complex datasets in your app, 1) these are a
-                likely culprit and b) you should consider re-designing/re-architecting the use
-                case.
+                "Selects a subset of items from array and returns it as a new array."
 
-                For more on the issue, see:
-                http://stackoverflow.com/questions/9682092/databinding-in-angularjs/9693933#9693933
             -->
+            <!-- AngularJS built-in filters - orderBy:
 
-            <tr ng-repeat="greeting in data.greetings">
+                From the AngularJS docs (https://docs.angularjs.org/api/ng/filter/orderBy):
+
+                "Orders a specified array by the expression predicate. It is ordered alphabetically
+                for strings and numerically for numbers. Note: if you notice numbers are not being
+                sorted correctly, make sure they are actually being saved as numbers and not strings."
+
+            -->
+            <!-- Pro-tip: Since the orderBy filter sorts based on the *type* of data being sorted, you should
+                always architect your data management so that *the same* data type is used for *all* elements
+                (or properties of elements) in your data lists. For example, if you have a property in a data list
+                that represents dates, don't sometimes store it as a string, sometimes as a Date object, and
+                sometimes as a unix-time integer. This is a good rule to follow in general, independent of AngularJS.
+            -->
+            <!-- Pro-tip: Adding filters using the pipe ("|") syntax in Angular expressions works similar to
+                unix-style pipes. That is, the *output* (e.g. value) of the preceding piped expression acts as an
+                *input* to the subsequent piped expression. This means order matters for both functionality and
+                performance. For example, if you are applying *both* a filter *and* an orderBy to a list of items,
+                you should place your filter *before* your sort. Otherwise, you will be potentially sorting many
+                items that won't ever get displayed (since they might just get filtered out immediately after
+                getting sorted). This is especially relevant for larger lists of data or more involved custom
+                sort/format filters.
+            -->
+            <tr ng-repeat="greeting in data.greetings | filter:data.search | orderBy:data.sortColumn:data.isReversed">
                 <td>{{ greeting.hello }}</td>
                 <td>{{ greeting.world }}</td>
                 <td>{{ greeting.language }}</td>
+                <!-- AngularJS built-in filters - date:
+
+                    From the AngularJS docs (https://docs.angularjs.org/api/ng/filter/date):
+
+                    "Formats date to a string based on the requested format."
+
+                -->
+                <td>{{ greeting.visitDate | date:'MMM d, y' }}</td>
             </tr>
         </table>
     </div>
 </div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js">
-</script>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
 </body>
 
 </html>
