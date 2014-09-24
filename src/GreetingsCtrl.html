@@ -1,0 +1,60 @@
+<div class="input-div">
+    Search:
+    <input type="text" class="form-control search-input" ng-model="greetModel.search" />
+</div>
+<table border="1" class="table table-striped table-bordered">
+    <tbody>
+    <tr class="no-select">
+        <th ng-click="sortBy('hello')">
+            Say hello
+            <i class="fa" ng-class="getSortClass('hello', stylesModel.sortClasses)"></i>
+        </th>
+        <th ng-click="sortBy('world')">
+            to the world
+            <i class="fa" ng-class="getSortClass('world', stylesModel.sortClasses)"></i>
+        </th>
+        <th ng-click="sortBy('language')">
+            in a language
+            <i class="fa" ng-class="getSortClass('language', stylesModel.sortClasses)"></i>
+        </th>
+        <th ng-click="sortBy('visitDate')">
+            Visited?
+            <i class="fa" ng-class="getSortClass('visitDate', stylesModel.sortClasses)"></i>
+        </th>
+        <th>
+            Add/Rem
+        </th>
+    </tr>
+    <tr ng-repeat="greeting in greetModel.greetings | orderBy:greetModel.sortColumn:greetModel.isReversed | filter:greetModel.search">
+        <td>{{ greeting.hello }}</td>
+        <td>{{ greeting.world }}</td>
+        <td>{{ greeting.language }}</td>
+        <td>{{ greeting.visitDate | date:'MMM d, y' }}</td>
+        <td>
+            <button style="width:100%" class="btn btn-danger table-btn" ng-click="removeGreeting(greeting, greetModel)">
+                <i class="fa fa-minus"></i>
+            </button>
+        </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td>
+            <input type="text" class="form-control add-input" ng-model="greetModel.addGreet.hello" />
+        </td>
+        <td>
+            <input type="text" class="form-control add-input" ng-model="greetModel.addGreet.world" />
+        </td>
+        <td>
+            <input type="text" class="form-control add-input" ng-model="greetModel.addGreet.language" />
+        </td>
+        <td>
+            <input type="text" class="form-control add-input" ng-model="greetModel.addGreet.visitDate" />
+        </td>
+        <td>
+            <button style="width:100%" class="btn btn-success table-btn" ng-click="addGreeting(greetModel.addGreet, greetModel)"><i class="fa fa-plus"></i>
+            </button>
+        </td>
+    </tr>
+    </tfoot>
+</table>
