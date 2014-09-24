@@ -4,7 +4,6 @@
     <list default="true" id="da2342b5-8b89-49a2-83dc-cbb9dbf3f947" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/greetingsApp.js" afterPath="$PROJECT_DIR$/src/greetingsApp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
     </list>
     <ignored path="angular-js-intro-examples.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +29,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="90" selection-start="515" selection-end="574" vertical-scroll-proportion="0.4534005" vertical-offset="0" max-vertical-offset="1305">
+            <state line="12" column="92" selection-start="515" selection-end="576" vertical-scroll-proportion="0.4534005" vertical-offset="0" max-vertical-offset="1305">
               <folding>
                 <element signature="n#style#0;n#button#0;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#td#4;n#tr#0;n#tfoot#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -42,7 +41,7 @@
       <file leaf-file-name="greetingsApp.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/greetingsApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="31" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1815">
+            <state line="92" column="39" selection-start="3555" selection-end="3555" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2310">
               <folding />
             </state>
           </provider>
@@ -71,8 +70,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/style.css" />
-        <option value="$PROJECT_DIR$/src/greetingsApp.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/greetingsApp.js" />
       </list>
     </option>
   </component>
@@ -259,14 +258,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/greetingsApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="31" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0" vertical-offset="1327" max-vertical-offset="1815">
+        <state line="92" column="39" selection-start="3555" selection-end="3555" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2310">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="90" selection-start="515" selection-end="574" vertical-scroll-proportion="0.4534005" vertical-offset="0" max-vertical-offset="1305">
+        <state line="12" column="92" selection-start="515" selection-end="576" vertical-scroll-proportion="0.4534005" vertical-offset="0" max-vertical-offset="1305">
           <folding>
             <element signature="n#style#0;n#button#0;n#td#4;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#td#4;n#tr#0;n#tfoot#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
