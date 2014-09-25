@@ -94,14 +94,22 @@ greetingsApp.factory('saveService', function(){
 
 greetingsApp.controller('GreetingsCtrl', ['$scope', 'GreetingsFactory', 'GreetingsService', 'saveService', 'defaultSortClasses',
   function($scope, GreetingsFactory, GreetingsService, saveService, defaultSortClasses) {
-    
+
     $scope.greetModel = {
       greetings: [],
       isReversed: false,
       orderBy: ''
     };
-    
+
     $scope.defaultSortClasses = defaultSortClasses;
+
+    GreetingsService.getGreetings().then(function(greetings) {
+      $scope.greetModel.greetings = $scope.greetModel.greetings.concat(greetings);
+    });
+
+    GreetingsFactory.getGreetings().then(function(greetings) {
+          $scope.greetModel.greetings = $scope.greetModel.greetings.concat(greetings);
+    });
 
     /* Pro-tip: Angular provides a variety of ways to watch for changes to data on the scope. Depending on the
         type of data being watched, one may be more appropriate than another. However, these will also have
@@ -129,12 +137,12 @@ greetingsApp.controller('GreetingsCtrl', ['$scope', 'GreetingsFactory', 'Greetin
       greetModel.addGreet = {};
     }
 
-    function isSortedBy(columnName, orderBy) {
-      return (columnName == orderBy);
+    function isSortedBy(columnName, sortColumn) {
+      return (columnName == sortColumn);
     }
 
-    function determineSortClass(columnName, orderBy, isReversed, sortClasses) {
-      if (!isSortedBy(columnName, orderBy)) {
+    function determineSortClass(columnName, sortColumn, isReversed, sortClasses) {
+      if (!isSortedBy(columnName, sortColumn)) {
         return sortClasses.unsorted;
       } else if (isReversed) {
         return sortClasses.descending;
@@ -144,13 +152,13 @@ greetingsApp.controller('GreetingsCtrl', ['$scope', 'GreetingsFactory', 'Greetin
     }
 
     function updateSort(columnName, greetModel) {
-      if (isSortedBy(columnName, greetModel.orderBy)) {
+      if (isSortedBy(columnName, greetModel.sortColumn)) {
         greetModel.isReversed = !greetModel.isReversed;
       } else {
         greetModel.isReversed = false;
       }
 
-      greetModel.orderBy = columnName;
+      greetModel.sortColumn = columnName;
     }
 
     function getSortClass(columnName, sortClasses) {
@@ -158,7 +166,7 @@ greetingsApp.controller('GreetingsCtrl', ['$scope', 'GreetingsFactory', 'Greetin
         $scope.defaultSortClasses : sortClasses;
 
       return determineSortClass(columnName,
-        $scope.greetModel.orderBy,
+        $scope.greetModel.sortColumn,
         $scope.greetModel.isReversed,
         sortClasses);
     }
@@ -166,24 +174,10 @@ greetingsApp.controller('GreetingsCtrl', ['$scope', 'GreetingsFactory', 'Greetin
     function sortBy(columnName) {
       updateSort(columnName, $scope.greetModel);
     }
-    
-    function loadData() {
-      GreetingsFactory.getGreetings().then(function(greetings) {
-        $scope.greetModel.greetings = $scope.greetModel.greetings.concat(greetings);
-      });
-    }
-    
-    function loadMoreData() {
-      GreetingsService.getGreetings().then(function(greetings) {
-        $scope.greetModel.greetings = $scope.greetModel.greetings.concat(greetings);
-      });
-    }
 
     $scope.sortBy = sortBy;
     $scope.getSortClass = getSortClass;
     $scope.removeGreeting = removeGreeting;
     $scope.addGreeting = addGreeting;
-    $scope.loadData = loadData;
-    $scope.loadMoreData = loadMoreData;
   }
 ]);
