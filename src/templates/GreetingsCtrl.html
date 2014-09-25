@@ -29,7 +29,7 @@
         <td>{{ greeting.hello }}</td>
         <td>{{ greeting.world }}</td>
         <td>{{ greeting.language }}</td>
-        <td>{{ greeting.country }}</td>
+        <td><a ng-href="#/trips/{{greeting.country}}">{{ greeting.country }}</a></td>
         <td>
             <button style="width:100%" class="btn btn-danger table-btn" ng-click="removeGreeting(greeting, greetModel)">
                 <i class="fa fa-minus"></i>

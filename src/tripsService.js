@@ -18,7 +18,7 @@ greetingsApp.service('TripsService', function TripsService($http) {
                     if (angular.isDefined(item.trips)) {
                         angular.forEach(item.trips, function(trip) {
                             if (angular.isDefined(trip.visitDate)) {
-                                trip.visitDate = new Date(item.visitStartDate);
+                                trip.visitDate = new Date(trip.visitDate);
                             }
                         });
                     }

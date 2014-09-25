@@ -21,11 +21,6 @@ greetingsApp.controller('GreetingsCtrl', ['$scope', 'GreetingsFactory', 'Greetin
             });
         });
 
-
-        TripsService.getTripsByCountry('Germany').then(function(trips) {
-            console.log(trips);
-        });
-
         function getSortClass(columnName, sortClasses) {
             return ColumnSortService.determineSortClass(
                 columnName,

@@ -7,13 +7,22 @@ var greetingsApp = angular.module('greetingsApp', ['ngRoute']);
 greetingsApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
-            when('/Greetings', {
+            when('/', {
                 templateUrl: 'templates/GreetingsCtrl.html',
                 controller: 'GreetingsCtrl'
-            }).
-            otherwise({
-                redirectTo: '/Greetings'
-        });
+            })
+            .when('/trips/:country', {
+                templateUrl: 'templates/TripsCtrl.html',
+                controller: 'TripsCtrl',
+                resolve: {
+                    trips: ['$route', 'TripsService', function($route, TripsService) {
+                        var country = $route.current.params.country;
+                        return TripsService.getTripsByCountry(country);
+                    }]
+                }
+            }).otherwise({
+                redirectTo: '/'
+            });
     }]);
 
 /* Pro-tip: Angular supports a number of built-in services and convenience methods on modules
