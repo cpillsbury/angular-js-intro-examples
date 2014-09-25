@@ -69,8 +69,31 @@ function GreetingsLoader($http) {
 
 greetingsApp.service('GreetingsService', ['$http', GreetingsLoader]);
 
-greetingsApp.controller('GreetingsCtrl', ['$scope', 'GreetingsFactory', 'GreetingsService', 'defaultSortClasses',
-  function($scope, GreetingsFactory, GreetingsService, defaultSortClasses) {
+greetingsApp.factory('saveService', function(){
+
+    var saveddata;
+
+    var saveData = function(data){
+        console.log("saved data! new data set size: " + data.length)
+        saveddata = data;
+
+        //Here is where you could save this to a file or a rest service
+        //For the purposes of this lesson, just temporarily locally saving it
+    };
+
+    var retrieveData = function(){
+        return saveddata;
+    };
+
+    return {
+        retrieveData:retrieveData,
+        saveData:saveData
+    };
+
+});
+
+greetingsApp.controller('GreetingsCtrl', ['$scope', 'GreetingsFactory', 'GreetingsService', 'saveService', 'defaultSortClasses',
+  function($scope, GreetingsFactory, GreetingsService, saveService, defaultSortClasses) {
     
     $scope.greetModel = {
       greetings: [],
@@ -79,6 +102,22 @@ greetingsApp.controller('GreetingsCtrl', ['$scope', 'GreetingsFactory', 'Greetin
     };
     
     $scope.defaultSortClasses = defaultSortClasses;
+
+    /* Pro-tip: Angular provides a variety of ways to watch for changes to data on the scope. Depending on the
+        type of data being watched, one may be more appropriate than another. However, these will also have
+        varying impacts on performance. For example, a simple watcher will check for changes to references on
+        the root property or changes to primitive types, but deep watching will recurse and check *all* properties
+        on a complex object for potential changes, which can be fairly expensive for large, complex objects.
+        Similarly, watchCollection will check for changes to particular elements on the list-like data (say, an array),
+        so this can be quite expensive if the data set is large. In other words, use with caution.
+     */
+    $scope.$watchCollection('greetModel.greetings', function(newGreetings, oldGreetings){
+      if (newGreetings === oldGreetings){
+          return;
+      }
+
+      saveService.saveData(newGreetings);
+    });
 
     function removeGreeting(greeting, greetModel) {
       var index = greetModel.greetings.indexOf(greeting);
