@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da2342b5-8b89-49a2-83dc-cbb9dbf3f947" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/GreetingsCtrl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/TripsCtrl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/englishGreeting.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/greetings.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/greetingsCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/greetingsFactory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/greetingsService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sortService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tripsCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tripsService.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GreetingsCtrl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/englishGreeting.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/greetings.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/greetingsApp.js" afterPath="$PROJECT_DIR$/src/greetingsApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="da2342b5-8b89-49a2-83dc-cbb9dbf3f947" name="Default" comment="" />
     <ignored path="angular-js-intro-examples.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,16 +26,43 @@
       <file leaf-file-name="greetingsApp.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/greetingsApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="705">
+            <state line="41" column="0" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0" vertical-offset="47" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="31" selection-start="486" selection-end="567" vertical-scroll-proportion="0.28985506" vertical-offset="0" max-vertical-offset="621">
+            <state line="12" column="31" selection-start="486" selection-end="567" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="555">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="greetingsService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/greetingsService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="greetingsFactory.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/greetingsFactory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tripsService.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tripsService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="64" selection-start="947" selection-end="947" vertical-scroll-proportion="0.6122449" vertical-offset="0" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
@@ -227,7 +236,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13227092" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24541607" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24489796" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -281,7 +290,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="486" selection-end="567" vertical-scroll-proportion="0.28985506" vertical-offset="0" max-vertical-offset="621">
+        <state line="12" column="31" selection-start="486" selection-end="567" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/greetingsFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="658">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/greetingsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="658">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tripsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="64" selection-start="947" selection-end="947" vertical-scroll-proportion="0.6122449" vertical-offset="0" max-vertical-offset="540">
           <folding />
         </state>
       </provider>
