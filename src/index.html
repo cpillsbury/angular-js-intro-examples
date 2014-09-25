@@ -12,26 +12,19 @@
 <div class="main-panel panel panel-primary">
     <div class="panel-heading">Lesson 7 - MVC Composition, Angular templates/partials and ng-include</div>
         <div class="panel-body">
-            <!-- ng-include:
-
-                From the AngularJS docs (https://docs.angularjs.org/api/ng/directive/ngInclude):
-
-                "Fetches, compiles and includes an external HTML fragment."
-            -->
-            <!-- Pro-tip: Use ng-include to make any particular part of your HTML *clearer* by making it more *concise*. This
-                has the added benefit of a) more manageable HTML b) creating templates/partials that may be reusable in other
-                sections of your application. Moreover, it has a second benefit in Angular: since the HTML referenced by the
-                ng-include directive is "compiled" by Angular, it will often eliminate cases where Angular binding declarations
-                (the double curly-braces and corresponding properties) will briefly "flash" on the screen before Angular can
-                compile them.
-            -->
-            <div ng-controller="GreetingsCtrl" ng-include="'GreetingsCtrl.html'"></div>
+            <div ng-view></div>
         </div>
     </div>
 </div>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.min.js"></script>
 <script type="text/javascript" src="./greetingsApp.js"></script>
+<script type="text/javascript" src="./sortService.js"></script>
+<script type="text/javascript" src="./greetingsCtrl.js"></script>
+<script type="text/javascript" src="./greetingsFactory.js"></script>
+<script type="text/javascript" src="./greetingsService.js"></script>
+<script type="text/javascript" src="./tripsService.js"></script>
 <link data-require="fontawesome@*" data-semver="4.1.0" rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
 </body>
 
