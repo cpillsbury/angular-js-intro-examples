@@ -21,8 +21,8 @@ greetingsApp.service('TripsService', function TripsService($http) {
                                 trip.visitDate = new Date(trip.visitDate);
                             }
                         });
+                        trips = item.trips;
                     }
-                    trips = item.trips;
                 }
             });
             return trips;

@@ -7,7 +7,7 @@ var greetingsApp = angular.module('greetingsApp');
 greetingsApp.controller('TripsCtrl', ['$scope', 'trips', 'ColumnSortService', function TripsCtrl($scope, trips, ColumnSortService) {
 
     $scope.tripModel = {};
-    $scope.tripModel.trips = trips | [];
+    $scope.tripModel.trips = trips || [];
 
     function getSortClass(columnName, sortClasses) {
         return ColumnSortService.determineSortClass(
