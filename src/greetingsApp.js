@@ -2,182 +2,41 @@
 
 /* global angular */
 
-var greetingsApp = angular.module('greetingsApp', []);
+var greetingsApp = angular.module('greetingsApp', ['ngRoute']);
 
-greetingsApp.value('defaultSortClasses', {
-  unsorted: '',
-  ascending: 'asc',
-  descending: 'desc'
-});
-
-greetingsApp.factory('GreetingsFactory', function($http) {
-    // a factory returns an object that exposes functions or properties
-
-    var greetingsJsonUrl = 'englishGreeting.json';
-
-    var getGreetings = function() {
-        return $http.get(greetingsJsonUrl).then(function(response) {
-            // we need to parse some data for use on the client
-            // use the angular forEach function to go through the data array
-            angular.forEach(response.data, function(item) {
-                // we can use angular.isDefined to see if an item/field exists
-                if (angular.isDefined(item.visitStartDate)) {
-                    item.visitStartDate = new Date(item.visitStartDate);
+greetingsApp.config(['$routeProvider',
+    function($routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'templates/GreetingsCtrl.html',
+                controller: 'GreetingsCtrl'
+            })
+            .when('/trips/:country', {
+                templateUrl: 'templates/TripsCtrl.html',
+                controller: 'TripsCtrl',
+                resolve: {
+                    trips: ['$route', 'TripsService', function($route, TripsService) {
+                        var country = $route.current.params.country;
+                        return TripsService.getTripsByCountry(country);
+                    }]
                 }
-                if (angular.isDefined(item.visitEndDate)) {
-                    item.visitEndDate = new Date(item.visitEndDate);
-                }
+            }).otherwise({
+                redirectTo: '/'
             });
-            return response.data;
-        });
-    };
+    }]);
 
-    // a factory needs to return an object that exposes functions
-    return {
-        getGreetings: getGreetings
-    };
+/* Pro-tip: Angular supports a number of built-in services and convenience methods on modules
+    for creating these services. At their root, however, every service type (constants, values,
+    factories, services, and providers) are all Angular providers.  All other services are
+    "syntactic sugar" wrapping the core provider service. You should choose the type of service
+    based on the expected use case(s).
+ */
+/* Pro-tip: Use the constant service to configure default (library or application) module properties.
+    These can be injected *anywhere* in your application, including during Angular's "configuration
+    phase."
+ */
+greetingsApp.constant('defaultSortClasses', {
+    unsorted: '',
+    ascending: 'asc',
+    descending: 'desc'
 });
-
-
-// ----------------- Service with an Object-Oriented Loader ----------------- //
-
-function GreetingsLoader($http) {
-    var greetingsJsonUrl = 'greetings.json';
-
-    this.getGreetings = function() {
-        return $http.get(greetingsJsonUrl).then(function(response) {
-            // we need to parse some data for use on the client
-            // use the angular forEach function to go through the data array
-            angular.forEach(response.data, function(item) {
-                // we can use angular.isDefined to see if an item/field exists
-                if (angular.isDefined(item.visitStartDate)) {
-                    item.visitStartDate = new Date(item.visitStartDate);
-                }
-                if (angular.isDefined(item.visitEndDate)) {
-                    item.visitEndDate = new Date(item.visitEndDate);
-                }
-            });
-            return response.data;
-        });
-    };
-}
-
-// a service returns the function object itself
-// a service automatically returns a 'new' object
-// however, it is still a singleton (just like factories and providers)
-// using an angular service allows you to use the angular DI
-
-greetingsApp.service('GreetingsService', ['$http', GreetingsLoader]);
-
-greetingsApp.factory('saveService', function(){
-
-    var saveddata;
-
-    var saveData = function(data){
-        console.log("saved data! new data set size: " + data.length)
-        saveddata = data;
-
-        //Here is where you could save this to a file or a rest service
-        //For the purposes of this lesson, just temporarily locally saving it
-    };
-
-    var retrieveData = function(){
-        return saveddata;
-    };
-
-    return {
-        retrieveData:retrieveData,
-        saveData:saveData
-    };
-
-});
-
-greetingsApp.controller('GreetingsCtrl', ['$scope', 'GreetingsFactory', 'GreetingsService', 'saveService', 'defaultSortClasses',
-  function($scope, GreetingsFactory, GreetingsService, saveService, defaultSortClasses) {
-
-    $scope.greetModel = {
-      greetings: [],
-      isReversed: false,
-      orderBy: ''
-    };
-
-    $scope.defaultSortClasses = defaultSortClasses;
-
-    GreetingsService.getGreetings().then(function(greetings) {
-      $scope.greetModel.greetings = $scope.greetModel.greetings.concat(greetings);
-    });
-
-    GreetingsFactory.getGreetings().then(function(greetings) {
-          $scope.greetModel.greetings = $scope.greetModel.greetings.concat(greetings);
-    });
-
-    /* Pro-tip: Angular provides a variety of ways to watch for changes to data on the scope. Depending on the
-        type of data being watched, one may be more appropriate than another. However, these will also have
-        varying impacts on performance. For example, a simple watcher will check for changes to references on
-        the root property or changes to primitive types, but deep watching will recurse and check *all* properties
-        on a complex object for potential changes, which can be fairly expensive for large, complex objects.
-        Similarly, watchCollection will check for changes to particular elements on the list-like data (say, an array),
-        so this can be quite expensive if the data set is large. In other words, use with caution.
-     */
-    $scope.$watchCollection('greetModel.greetings', function(newGreetings, oldGreetings){
-      if (newGreetings === oldGreetings){
-          return;
-      }
-
-      saveService.saveData(newGreetings);
-    });
-
-    function removeGreeting(greeting, greetModel) {
-      var index = greetModel.greetings.indexOf(greeting);
-      greetModel.greetings.splice(index, 1);
-    }
-
-    function addGreeting(greeting, greetModel) {
-      greetModel.greetings.push(greeting);
-      greetModel.addGreet = {};
-    }
-
-    function isSortedBy(columnName, sortColumn) {
-      return (columnName == sortColumn);
-    }
-
-    function determineSortClass(columnName, sortColumn, isReversed, sortClasses) {
-      if (!isSortedBy(columnName, sortColumn)) {
-        return sortClasses.unsorted;
-      } else if (isReversed) {
-        return sortClasses.descending;
-      } else {
-        return sortClasses.ascending;
-      }
-    }
-
-    function updateSort(columnName, greetModel) {
-      if (isSortedBy(columnName, greetModel.sortColumn)) {
-        greetModel.isReversed = !greetModel.isReversed;
-      } else {
-        greetModel.isReversed = false;
-      }
-
-      greetModel.sortColumn = columnName;
-    }
-
-    function getSortClass(columnName, sortClasses) {
-      sortClasses = angular.isUndefined(sortClasses) ?
-        $scope.defaultSortClasses : sortClasses;
-
-      return determineSortClass(columnName,
-        $scope.greetModel.sortColumn,
-        $scope.greetModel.isReversed,
-        sortClasses);
-    }
-
-    function sortBy(columnName) {
-      updateSort(columnName, $scope.greetModel);
-    }
-
-    $scope.sortBy = sortBy;
-    $scope.getSortClass = getSortClass;
-    $scope.removeGreeting = removeGreeting;
-    $scope.addGreeting = addGreeting;
-  }
-]);

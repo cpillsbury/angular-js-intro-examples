@@ -5,7 +5,7 @@ body{
 }
 
 .main-panel{
-    width: 640px;   
+    width: 640px;
 }
 
 .input-div{
@@ -15,7 +15,7 @@ body{
 .search-input{
     display: inline-block;
     height: 25px;
-    width: 200px;   
+    width: 200px;
 }
 
 .no-select{

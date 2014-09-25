@@ -1,0 +1,106 @@
+[
+    {
+        "hello": "Guten Tag",
+        "world": "Welt",
+        "language": "German",
+        "country": "Germany",
+        "trips": [
+            {
+                "visitDate": "1999-12-31",
+                "description": "Silvester war viel Spaß!"
+            },
+            {
+                "visitDate": "2002-10-10",
+                "description": "I forgot what happened."
+            }
+        ]
+    },
+    {
+        "hello": "Hola",
+        "world": "mundo",
+        "language": "Spanish",
+        "country": "Spain"
+    },
+    {
+        "hello": "Bonjour",
+        "world": "monde",
+        "language": "French",
+        "country": "France",
+        "trips": [
+            {
+                "visitDate": "2013-8-15",
+                "description": "The Normandy coast was beautiful."
+            },
+            {
+                "visitDate": "2001-5-15",
+                "description": "Got sick. Stayed in the hostel the whole time."
+            }
+        ]
+    },
+    {
+        "hello": "Ciao",
+        "world": "mondo",
+        "language": "Italian",
+        "country": "Italy",
+        "trips": [
+            {
+                "visitDate": "1983-7-12",
+                "description": "Too young to remember!"
+            }
+        ]
+    },
+    {
+        "hello": "Konnichiwa",
+        "world": "sekai",
+        "language": "Japanese",
+        "country": "Japan",
+        "trips": [
+            {
+                "visitDate": "2000-1-1",
+                "description": "Tokyo is insane for New Years!"
+            },
+            {
+                "visitDate": "1993-1-29",
+                "description": "Visited the countryside."
+            },
+            {
+                "visitDate": "2004-5-5",
+                "description": "Some generic description of a trip."
+            }
+        ]
+    },
+    {
+        "hello": "Selam",
+        "world": "dünya",
+        "language": "Turkish",
+        "country": "Turkey",
+        "trips": [
+            {
+                "visitDate": "2013-8-15",
+                "description": "Ran out of interesting descriptions."
+            }
+        ]
+    },
+    {
+        "hello": "Namaste",
+        "world": "duniyā",
+        "language": "Hindi",
+        "country": "India",
+        "trips": [
+            {
+                "visitDate": "2013-8-15",
+                "description": "This is the penultimate description I'm writing."
+            },
+            {
+                "visitDate": "2013-9-15",
+                "description": "This is the ultimate description I'm writing."
+            }
+        ]
+    },
+    {
+        "hello": "NuqneH",
+        "world": "'u'",
+        "language": "Klingon",
+        "country": "Qo'noS (Planet)"
+    }
+]

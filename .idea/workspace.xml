@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da2342b5-8b89-49a2-83dc-cbb9dbf3f947" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GreetingsCtrl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/GreetingsCtrl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/TripsCtrl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/englishGreeting.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/greetings.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/greetingsCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/greetingsFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/greetingsService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sortService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tripsCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tripsService.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GreetingsCtrl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/englishGreeting.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/greetings.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/greetingsApp.js" afterPath="$PROJECT_DIR$/src/greetingsApp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-js-intro-examples.iws" />
@@ -28,28 +41,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="englishGreeting.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/englishGreeting.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="1" selection-start="175" selection-end="175" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="210">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="greetings.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/greetings.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="6" selection-start="269" selection-end="269" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="885">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="greetingsApp.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/greetingsApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="176" column="0" selection-start="6047" selection-end="6047" vertical-scroll-proportion="0.0" vertical-offset="2331" max-vertical-offset="2820">
+            <state line="41" column="0" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
@@ -58,16 +53,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="100" selection-start="485" selection-end="554" vertical-scroll-proportion="0.39823008" vertical-offset="0" max-vertical-offset="645">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GreetingsCtrl.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GreetingsCtrl.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="83" selection-start="1053" selection-end="1063" vertical-scroll-proportion="-8.125" vertical-offset="210" max-vertical-offset="975">
+            <state line="12" column="31" selection-start="486" selection-end="567" vertical-scroll-proportion="0.28985506" vertical-offset="0" max-vertical-offset="621">
               <folding />
             </state>
           </provider>
@@ -87,9 +73,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/style.css" />
-        <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/GreetingsCtrl.html" />
         <option value="$PROJECT_DIR$/src/greetingsApp.js" />
+        <option value="$PROJECT_DIR$/src/index.html" />
       </list>
     </option>
   </component>
@@ -178,6 +164,14 @@
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -188,23 +182,15 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -241,7 +227,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13227092" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24635568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24541607" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -272,37 +258,30 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/englishGreeting.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="1" selection-start="175" selection-end="175" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="210">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/greetings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="6" selection-start="269" selection-end="269" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="885">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GreetingsCtrl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="83" selection-start="1053" selection-end="1063" vertical-scroll-proportion="-8.125" vertical-offset="210" max-vertical-offset="975">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/greetingsApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="0" selection-start="6047" selection-end="6047" vertical-scroll-proportion="0.0" vertical-offset="2331" max-vertical-offset="2820">
+        <state line="41" column="0" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="705">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="100" selection-start="485" selection-end="554" vertical-scroll-proportion="0.39823008" vertical-offset="0" max-vertical-offset="645">
+        <state line="12" column="93" selection-start="485" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/greetingsApp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="31" selection-start="486" selection-end="567" vertical-scroll-proportion="0.28985506" vertical-offset="0" max-vertical-offset="621">
           <folding />
         </state>
       </provider>

@@ -1,0 +1,18 @@
+[
+    {
+        "hello": "Hello",
+        "world": "world",
+        "language": "English",
+        "country": "United States",
+        "trips": [
+            {
+                "visitDate": "2010-10-28",
+                "description": "Great Halloween party!"
+            },
+            {
+                "visitDate": "2013-5-25",
+                "description": "Decided to move here."
+            }
+        ]
+    }
+]
